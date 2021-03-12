@@ -11,8 +11,11 @@ using pi = pair<int,int>;
 #define s second
 #define mp make_pair
 
-using namespace std;
 int main(){
-    pi pairOne = mp(1,2)
-    int firstElem = pairOne.f
+    pi pairOne = mp(1,2);
+    int firstElem = pairOne.f;
+    cout << firstElem << endl;
+    string input;
+    cin>>input;
+    long long n = stoll(input);
 }
