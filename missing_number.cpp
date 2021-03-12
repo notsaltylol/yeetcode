@@ -14,8 +14,14 @@ using pi = pair<int,int>;
 int main(){
     string input;
     cin>>input;
-    vector<bool> b;
-    int n = stoll(input);
+    ll n = stoll(input);
+    ll t = n*(n+1)/2;
+    for(int i=0;i<n-1;i++){
+        cin >> input;
+        t-=stoll(input);
+    }
+    cout<<t;
+    /*
     for(int i=0;i<n;i++){
         b.push_back(false);
     }
@@ -28,5 +34,6 @@ int main(){
             cout<<i+1;
         }
     }
+    */
     return 0;
 }
