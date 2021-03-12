@@ -10,20 +10,15 @@ using pi = pair<int,int>;
 #define f first
 #define s second
 #define mp make_pair
+#define rep(i,a,b) for (int i = a; i < b; i++)
 
-ll fact(int n){
-    int x=1;
-    rep(i,0,n){
-        x*=i+1;
-    }
-    return x;
-}
 
 int main(){
-    pi pairOne = mp(1,2);
-    int firstElem = pairOne.f;
-    cout << firstElem << endl;
-    string input;
-    cin>>input;
-    long long n = stoll(input);
+    int n;
+    cin>>n;
+    rep(i,1,n+1){
+        ll t = i*i;
+        cout<<t*(t-1)/2-(i-1)*(i-2)*4<<endl; 
+    }
+    return 0;
 }
