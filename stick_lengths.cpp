@@ -13,16 +13,21 @@ using pi = pair<int,int>;
 #define rep(i,a,b) for (int i = a; i < b; i++)
 
 int main(){
-    int n;
+    int n,in;
     cin>>n;
-    ll m=INT_MIN;
-    ll c=0;
-    vector<ll> x;
-    for(int i=0;i<n;i++){
-        c+=(cin>>in);
-        m=max(m,c);
-        if(c<0) c=0;
+    ll sum=0;
+    vi p;
+    rep(i,0,n){
+        cin>>in;
+        p.pb(in);
+        sum+=in;
     }
-    cout<<m;
-    return 0;
+    int avg=sum/n;
+    sort(all(p));
+    sum=0;
+    rep(i,0,n){
+        sum+=abs(p[i]-avg);
+    }
+    cout<<sum;
+    
 }

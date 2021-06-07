@@ -11,18 +11,23 @@ using pi = pair<int,int>;
 #define s second
 #define mp make_pair
 #define rep(i,a,b) for (int i = a; i < b; i++)
-
+ 
 int main(){
     int n;
     cin>>n;
-    ll m=INT_MIN;
-    ll c=0;
-    vector<ll> x;
-    for(int i=0;i<n;i++){
-        c+=(cin>>in);
-        m=max(m,c);
-        if(c<0) c=0;
+    vi c(n);
+    int i=0;
+    int d=2;
+    int curr=0;
+    while(i<n){
+        if(i==n-n/d){
+            curr-=d;
+            d*=2;
+        }
+        curr=(curr+d)%n;
+        cout<<i<<" "<<curr<<endl;
+        cout<<endl;
+        i++;
     }
-    cout<<m;
     return 0;
 }

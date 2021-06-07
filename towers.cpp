@@ -11,18 +11,20 @@ using pi = pair<int,int>;
 #define s second
 #define mp make_pair
 #define rep(i,a,b) for (int i = a; i < b; i++)
-
+ 
 int main(){
     int n;
     cin>>n;
-    ll m=INT_MIN;
-    ll c=0;
-    vector<ll> x;
-    for(int i=0;i<n;i++){
-        c+=(cin>>in);
-        m=max(m,c);
-        if(c<0) c=0;
+    multiset<int> k;
+    rep(i,0,n){
+        int in;
+        cin>>in;
+        k.insert(in);
+        auto it = k.upper_bound(in);
+        if(it!=k.end()){
+            k.erase(it);
+        }
     }
-    cout<<m;
+    cout<<k.size();
     return 0;
 }

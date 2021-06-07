@@ -13,16 +13,17 @@ using pi = pair<int,int>;
 #define rep(i,a,b) for (int i = a; i < b; i++)
 
 int main(){
-    int n;
+    int n,in;
     cin>>n;
-    ll m=INT_MIN;
-    ll c=0;
-    vector<ll> x;
-    for(int i=0;i<n;i++){
-        c+=(cin>>in);
-        m=max(m,c);
-        if(c<0) c=0;
+    vi x;
+    rep(i,0,n){
+        cin>>in;
+        x.pb(in);
     }
-    cout<<m;
-    return 0;
+    ll sum=1;
+    sort(all(x));
+    for(int i=0;i<n&&x[i]<=sum;i++){
+        sum+=x[i];
+    }
+    cout<<sum;
 }
